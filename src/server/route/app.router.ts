@@ -1,0 +1,11 @@
+import { createRouter } from "../createRouter";
+
+export const appRouter = createRouter().query("hello", {
+    resolve: () => {
+        return "Hello from trpc server";
+    },
+});
+
+// This type is pass to many files so that they
+//  can know what type of queries and mutations are used.
+export type AppRouter = typeof appRouter;
