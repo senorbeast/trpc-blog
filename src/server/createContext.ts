@@ -10,4 +10,5 @@ export function createContext({
     return { req, res };
 }
 
+// Extracting type of Context
 export type Context = ReturnType<typeof createContext>;
