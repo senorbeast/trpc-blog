@@ -17,8 +17,9 @@ export default withTRPC<AppRouter>({
             : "http://localhost:3000/api/trpc";
 
         const links = [
-            loggerLink(),
+            loggerLink(), // good for debugging
             httpBatchLink({
+                // Makes app faster
                 maxBatchSize: 10,
                 url,
             }),
@@ -28,12 +29,14 @@ export default withTRPC<AppRouter>({
             queryClientConfig: {
                 defaultOptions: {
                     queries: {
-                        slateTime: 60,
+                        staleTime: 60,
                     },
                 },
                 headers() {
                     if (ctx?.req) {
                         return {
+                            // add headers  to the req into the server,
+                            // then get copies from the headers
                             ...ctx.req.headers,
                             "x-ssr": "1",
                         };
@@ -43,8 +46,8 @@ export default withTRPC<AppRouter>({
             },
 
             links,
-            transformer: superjson,
+            transformer: superjson, // allows to just native dates, maps
         };
     },
-    ssr: false,
+    ssr: false, // try it out with `true`
 })(MyApp);
