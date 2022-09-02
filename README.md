@@ -25,3 +25,8 @@ yarn dev
 3. Access those hooks on client for fetching. 
 
 <!--  -->
+
+## Prisma
+
+- `npx prisma init`
+- `npx prisma migrate dev --name`
