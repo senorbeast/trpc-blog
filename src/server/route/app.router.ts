@@ -1,10 +1,7 @@
 import { createRouter } from "../createRouter";
+import { userRouter } from "./user.router";
 
-export const appRouter = createRouter().query("hello", {
-    resolve: () => {
-        return "Hello from trpc server";
-    },
-});
+export const appRouter = createRouter().merge("users.", userRouter);
 
 // This type is pass to many files so that they
 //  can know what type of queries and mutations are used.

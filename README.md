@@ -26,6 +26,10 @@ yarn dev
 
 <!--  -->
 
+## Bootstrap App
+`yarn create next-app trpc-blog --typescript`
+
+`yarn add @trpc/client @trpc/server @trpc/react @trpc/next zod react-query superjson jotai @prisma/client react-hook-form jsonwebtoken cookie`
 ## Prisma
 
 - `npx prisma init`
