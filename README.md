@@ -36,9 +36,19 @@ yarn dev
 - `npx prisma migrate dev --name`
 - `npx prisma format` Formats the schema file
 
-## Account
+## Endpoints
 
+> users.register-user
 - Register: Adds user to db, redirects to Login page
-- Login: Creates auth token, adds token to db for the email id, sends verification link with token to email id
-- If user uses the link with token, token has to be verified now.
-- After verification, user is authenticated and redirected to the dashboard page.
+
+> users.request-otp
+- Login: Creates auth token, adds token to db for the email id, sends verification link with encoded token to email id (encoded in base64 here)
+- If user uses the link with token.
+
+> users.verify-otp
+- Use the base64 encoded token (decode it) to get email id and id of token ,
+- Verify with db, if verified, create jwt token, add to cookie (header), redirect to initial page.
+
+> users.me
+
+- Once verified, add user to context.

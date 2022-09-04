@@ -46,7 +46,7 @@ export const userRouter = createRouter()
             }
         },
     })
-    // OTP is LoginToken
+    // OTP is LoginToken, request otp at login
     .mutation("request-otp", {
         input: requestOTPSchema,
         async resolve({ ctx, input }) {
