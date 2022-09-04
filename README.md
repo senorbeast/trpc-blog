@@ -1,6 +1,8 @@
+### Trying out tRPC
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+#### Getting Started
 
 First, run the development server:
 
@@ -10,7 +12,7 @@ npm run dev
 yarn dev
 ```
 
-## Notes
+#### Initial Setup
 
 - Backend
 
@@ -26,17 +28,30 @@ yarn dev
 
 <!--  -->
 
-## Bootstrap App
+#### Bootstrap App
 `yarn create next-app trpc-blog --typescript`
 
 `yarn add @trpc/client @trpc/server @trpc/react @trpc/next zod react-query superjson jotai @prisma/client react-hook-form jsonwebtoken cookie`
-## Prisma
+#### Prisma
 
 - `npx prisma init`
 - `npx prisma migrate dev --name`
 - `npx prisma format` Formats the schema file
 
-## Endpoints
+##### Create Schema for DB with Prisma
+
+##### Create Schema with zod for tRPC, and convert to normal types for Typescript use cases.
+
+- Zod is a schema builder for typescript
+
+##### Helps us to:
+
+- input arguments for our queries and mutations
+- validate the input arguments
+- generate typescript types from the schema
+-
+
+#### Endpoints
 
 > users.register-user
 
