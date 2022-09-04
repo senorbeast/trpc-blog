@@ -9,6 +9,7 @@ import * as trpcS from "@trpc/server";
 
 export const userRouter = createRouter().mutation("register-user", {
     input: createUserSchema,
+    // async resolve(){}  #This is valid too.
     resolve: async ({ ctx, input }) => {
         const { email, name } = input;
 
@@ -35,5 +36,4 @@ export const userRouter = createRouter().mutation("register-user", {
             });
         }
     },
-    // async resolve(){}  #This is valid too.
 });
