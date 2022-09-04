@@ -6,6 +6,9 @@ function SinglePostPage() {
     const router = useRouter();
     const postId = router.query.postId as string;
 
+    //  Checks the db for the post with the id of postId
+    // TODO: If its not a valid uuid, it stucks on loading
+    // If valid uuid, and not found returns 404
     const { data, isLoading } = trpc.useQuery(["posts.post", { postId }]);
     if (isLoading) {
         return <div>Loading...</div>;
