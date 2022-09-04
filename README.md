@@ -39,16 +39,21 @@ yarn dev
 ## Endpoints
 
 > users.register-user
+
 - Register: Adds user to db, redirects to Login page
 
 > users.request-otp
-- Login: Creates auth token, adds token to db for the email id, sends verification link with encoded token to email id (encoded in base64 here)
+
+- LoginCreates base64 encoded token with info of tokenId and email.
+- Email verification link with encoded token to email id.
 - If user uses the link with token.
 
 > users.verify-otp
-- Use the base64 encoded token (decode it) to get email id and id of token ,
+
+- Use the base64 encoded token (decode it) to get email id and id of token,
 - Verify with db, if verified, create jwt token, add to cookie (header), redirect to initial page.
 
 > users.me
 
 - Once verified, add user to context.
+- Authentication Done.
