@@ -74,4 +74,7 @@ yarn dev
 - Authentication Done.
 
 Credits: 
+https://trpc.io/docs/v9/quickstart
 https://github.com/TomDoesTech
+https://github.com/t3-oss/create-t3-app
+
