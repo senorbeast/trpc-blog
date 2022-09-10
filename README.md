@@ -72,3 +72,6 @@ yarn dev
 
 - Once verified, add user to context.
 - Authentication Done.
+
+Credits: 
+https://github.com/TomDoesTech
